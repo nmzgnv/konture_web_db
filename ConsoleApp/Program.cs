@@ -14,6 +14,13 @@ namespace ConsoleApp
         {
             userRepo = new InMemoryUserRepository();
             gameRepo = new InMemoryGameRepository();
+<<<<<<< HEAD
+=======
+            var mongoConnectionString = Environment.GetEnvironmentVariable("PROJECT5100_MONGO_CONNECTION_STRING")
+                                        ?? "mongodb://localhost:27017";
+            var db = new MongoClient(mongoConnectionString).GetDatabase("game");
+            gameTurnRepo = new MongoGameTurnRepository(db);
+>>>>>>> 33fb2c7 (feat: hw)
         }
 
         public static void Main(string[] args)
